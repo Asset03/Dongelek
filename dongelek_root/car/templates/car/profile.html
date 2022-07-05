@@ -1,0 +1,58 @@
+{% extends 'car/base.html' %}
+{% load static %}
+{% block scripts %}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="{% static 'js\deleteCar.js' %}" defer></script>
+    <link type="text/css" rel="stylesheet" href="{% static 'css/profile.css' %}">
+{% endblock %}
+{% block content %}
+    <div class="profile_main_container">
+        <div class="left_container">
+            <img src="{% static 'images/ava.png'%}" alt="" width="200px">
+            <div class="name">{{user.first_name}} {{user.last_name}}</div>
+            <a href="{% url 'update-currency' %}">
+                <button class="update-currency-btn">Update Currency Data</button>
+            </a>
+            <a href="{% url 'my-advertisements' %}">
+                <button class="my-advertisements-btn">My Advertisements</button>
+            </a>
+        </div>
+        <div class="right_container">
+            <div class="information_container">
+                <div class="hint_container">
+                    Username*
+                </div>
+                <div class="information">
+                    {{user.username}}
+                </div>
+            </div>
+            <div class="information_container">
+                <div class="hint_container">
+                    Email*
+                </div>
+                <div class="information">
+                    {{user.email}}
+                </div>
+            </div>
+            <div class="information_container">
+                <div class="hint_container">
+                    First name*
+                </div>
+                <div class="information">
+                    {{user.first_name}}
+                </div>
+            </div>
+            <div class="information_container">
+                <div class="hint_container">
+                    Last name*
+                </div>
+                <div class="information">
+                    {{user.last_name}}
+                </div>
+            </div>
+            <a href="{% url 'update-user' %}">
+                <button class="edit-profile-btn" type="submit">Edit profile</button>
+            </a>
+        </div>
+    </div>
+{% endblock %}

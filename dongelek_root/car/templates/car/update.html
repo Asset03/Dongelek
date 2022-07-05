@@ -1,0 +1,63 @@
+{% extends 'car/base.html' %}
+{% load static %}
+{% block scripts %}
+    <link type="text/css" rel="stylesheet" href="{% static 'css/addCar.css' %}">
+{% endblock %}
+
+{% block content %}
+    <div class="form_container">
+        <div class="title">
+            Update Car Information
+        </div>
+        <form method="POST" action="{{car.get_absolute_update_url}}" enctype="multipart/form-data">
+            {% csrf_token %}
+                <div class="form_attribute_container full">
+                    <span>Name*</span>
+                    <input type="text" name="name" maxlength="255" required id="id_name" value="{{car.name}}">
+                </div>
+                <div class="form_attribute_container full">
+                    <span>Slug*</span>
+                    <input type="text" name="slug" maxlength="255" required id="id_slug" value="{{car.slug}}">
+                </div>
+                <div class="form_attribute_container half">
+                    <span>Year*</span>
+                    <input type="number" name="year" required id="id_year"  value="{{car.year}}">
+                </div>
+                <div class="form_attribute_container half">
+                    <span>Run*</span>
+                    <input type="number" name="run" required id="id_run" value="{{car.run}}">
+                </div>
+                <div class="form_attribute_container half">
+                    <span>Engine Capacity*</span>
+                    <input type="number" name="engine_capacity" required id="id_engine_capacity"  value="{{car.engine_capacity}}">
+                </div>
+                <div class="form_attribute_container half">
+                    <span>Color*</span>
+                    <input type="text" name="color" maxlength="255" required id="id_color" value="{{car.color}}">
+                </div>
+                <div class="form_attribute_container half">
+                    <span>City*</span>
+                    {{form.city}}
+                </div>
+                <div class="form_attribute_container half">
+                    <span>Brand*</span>
+                    {{form.brand}}
+                </div>
+                <div class="form_attribute_container half">
+                    <span>Price*</span>
+                    <input type="number" name="price" required id="id_price"  value="{{car.price}}">
+                </div>
+                <div class="form_attribute_container half">
+                    <span>Main Image*</span>
+                    <label for="id_main_image">Choose Image</label>
+                    <input type="file" name="main_image" accept="image/*" required id="id_main_image"  value="{{car.image}}">
+                </div>
+                <div class="full description_container">
+                    <span>Description*</span>
+                    <textarea name="description" id="id_description" cols="0" rows="10" placeholder="Description">{{car.description}}</textarea>
+                </div>
+            <button type="submit">Update</button>
+        </form>
+    </div>
+
+{% endblock %}

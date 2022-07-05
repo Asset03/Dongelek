@@ -1,0 +1,163 @@
+body{
+    color: black;
+    /*font-family: 'Oleo Script', cursive;*/
+}
+.titles{
+    height: 80px;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+}
+.title{
+    line-height: 80px;
+    text-align: center;
+    font-size: 50px;
+    font-weight: 600;
+}
+.title_form{
+    line-height: 80px;
+    text-align: right;
+}
+.title_select{
+    cursor: pointer;
+    border-radius: 5px;
+    width: 200px;
+    height: 30px;
+}
+.test{
+    width: 90%;
+    padding: 10px;
+    box-sizing: border-box;
+}
+.subcategory_cars{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 2rem;
+}
+.in_category_car{
+    padding-bottom: 10px;
+    border: 1px solid rgba(206, 206, 206, 0.1);
+    border-radius: 10px;
+    box-shadow: 0px 0px 7px 1px rgba(0,0,0,0.2);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 380px;
+    height: 400px;
+}
+.in_category_car:hover{
+    box-shadow: 0px 0px 22px 5px rgba(0,0,0,0.2);
+}
+.car_img{
+    border-radius: 10px;
+    cursor: pointer;
+    margin: 0;
+    background-color: #eeeeee;
+    width: 380px;
+    height: 240px;
+}
+.in_category_car_main_information{
+    box-sizing: border-box;
+    padding: 10px;
+    width: 380px;
+    margin: 0;
+    height: 150px;
+    margin-bottom: 20px;
+}
+.in_category_car_year_run_info{
+    font-size: 14px;
+    font-weight: 550;
+}
+.in_category_car_name_price_info{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 3px;
+}
+.name{
+    font-size: 18px;
+    font-weight: 600;
+}
+.price{
+    font-weight: 550;
+    font-size: 18px;
+}
+.currency{
+    font-weight: 550;
+    font-size: 18px;
+}
+.in_category_car_city_info{
+    margin-top: 5px;
+}
+.in_category_car_created_date_info{
+    margin-top: 5px;
+}
+.row{
+    display: flex;
+}
+.in_category_car_created_button{
+    margin-top: 5px;
+    height: 30px;
+    text-align: center;
+}
+.button{
+    margin-top: 10px;
+    border: none;
+    border-radius: 5px;
+    width: 140px;
+    height: 30px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 550;
+}
+.button:hover{
+    background-color: #eeeeee;
+}
+.not-found-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+}
+.not-found-main-message-container{
+    font-family: 'Ubuntu';
+    font-weight: 900;
+    font-size: 30px;
+    color: #4c4c4c;
+}
+.not-found-image-container{
+    width: 30%;
+    margin-top: 30px;
+}
+.not-found-additional-message-container{
+    margin-top: 20px;
+    font-family: 'Ubuntu';
+    font-size: 17px;
+    color: #666;
+}
+.not-found-container a{
+    margin-top: 20px;
+    transition: background-color linear .3s;
+    transition: color linear .3s;
+    text-decoration: none;
+    text-align: center;
+    color:black;
+    font-weight: 700;
+    border-color: #C4C4C4;
+    padding: 10px 0px;
+    border-style: solid;
+    background-color: #eeeeee;
+    margin-bottom: 10px;
+    font-family: 'Akshar', sans-serif;    
+    width: 250px;
+    font-size: 20px;
+    border-radius: 10px;
+}
+.not-found-container a:hover{
+    background-color: white;
+    color: #4f4f4f9e;
+}
+.not-found-main-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

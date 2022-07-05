@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;800&display=swap');
+
+.header a{
+    color: white;
+    text-decoration: none;
+}
+.header a:hover{
+    color:white;
+    text-decoration: none;
+}
+.header{
+    background-color: black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+.header_container{
+    display: flex;
+    align-items: center;
+}
+.last_header_container{
+    padding-right: 30px;
+}
+.logo_name{
+    font-size: 30px;
+    font-family: 'Work Sans', sans-serif;
+    font-weight: bold;
+}
+.menu{
+    font-family: 'Work Sans', sans-serif;
+    padding-left: 30px;
+    font-weight: 500;
+    font-size: 20px;
+}
+.header_container select{
+    background-color: #C4C4C4;
+    font-family: 'Work Sans', sans-serif;
+    width: 200px;
+    height: 30px;
+    font-size: 20px;
+    padding-left: 10px;
+    color: #4F4F4FB8;
+    border-radius: 5px;
+    margin-right: 30px;
+}
+
+.search_container{
+    margin-right: 30px;
+    margin-top: 30px;
+}
+.search_container input{
+    padding-left: 36px;
+    font-size: 20px;
+    margin-left: 30px;
+    color: #4f4f4f;
+    width: 80%;
+    height: 30px;
+    border-radius: 10px;
+    border-style: solid;
+}
+.search_container input::placeholder{
+    font-size: 20px;
+}
+.search_container button{
+    background-color: white;
+    border-color: #C4C4C4;
+    border-style: solid;
+    color: #4f4f4f9e;
+    height: 36px;
+    border-radius: 5px;
+    width: 10%;
+    font-size: 20px;
+}
+.search_container button:hover{
+    background-color: #4f4f4f75;
+    color: white;
+
+}
+#currency_select option{
+    background-color: white;
+    border-width: 2px;
+    border-color: #4f4f4f75
+}
+#currency_select option:hover{
+    background-color: #4f4f4f75;
+}

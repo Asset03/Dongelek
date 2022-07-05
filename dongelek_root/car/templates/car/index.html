@@ -1,0 +1,37 @@
+{% extends 'car/base.html' %}
+{% load static %}
+{% block scripts %}
+    <link type="text/css" rel="stylesheet" href="{% static 'css/index.css' %}">
+{% endblock %}
+{% block content %}
+    <h1 class="titles">Cities</h1>
+    <div class="cities_container">    
+        {% for city in cities %}
+            <a href="{{ city.get_absolute_url }}"/>
+                <div class="city">
+                    <div class="city_name">
+                        {{city.name}}
+                    </div>
+                    <div class="city_hr"><hr></div>
+                    <div class="amount_city">
+                        {{city.get_amount_cars}}
+                    </div>
+                </div>
+            </a>
+        {% endfor %}
+    </div>
+    <h1 class="titles">Brands</h1>
+    <div class="brands_container">
+        {% for brand in brands %}
+            <div class="brand_container">
+                <a href="{{ brand.get_absolute_url }}">
+                    <div class="brand_logo">
+                        <img width="80px" class="index_brand_logo" src="{{ brand.logo.url }}" alt="{{ brand.name }}">
+                    </div>
+                    <h4 class="brand_name">{{brand.name}}</h4>
+                </a>
+            </div>
+        {% endfor %}
+    </div>
+    
+{% endblock %}

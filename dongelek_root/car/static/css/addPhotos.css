@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Akshar:wght@300;400&family=Montserrat:wght@400;700;800&family=Poppins:wght@300&family=Roboto+Condensed&display=swap');
+
+.btn{
+    font-weight: 700;
+    border-color: #C4C4C4;
+    padding: 10px 0px;
+    border-style: solid;
+    background-color: #eeeeee;
+    margin-bottom: 10px;
+    font-family: 'Akshar', sans-serif;    
+    width: 400px;
+    font-size: 20px;
+    text-align: center;
+    border-radius: 10px;
+}
+.btn:hover{
+    background-color: white;
+    color: #4f4f4f9e;
+}
+.add-btn{
+    transition: background-color linear .3s;
+    transition: color linear .3s;
+    width: 400px;
+    font-family: 'Akshar', sans-serif;    
+    padding: 10px 30px;
+    font-size: 20px;
+    margin-bottom: 20px;
+    background-color: black;
+    color: white;
+    border-radius: 10px;
+}
+.add-btn:hover{
+    background-color: white;
+    color: black;
+}
+.content{
+    margin-top: 100px;
+    display: flex;
+    width: 90%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+.content form{
+    display: flex;
+    flex-direction: column;
+}

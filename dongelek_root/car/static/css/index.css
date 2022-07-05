@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;800&display=swap');
+.cities_container{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: space-between;
+}
+.cities_container a{
+    text-decoration: none;
+    color: #757575;
+    width: 30%;
+    margin-bottom: 30px;
+}
+.city{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.city_hr{
+    width: 70%;
+}
+.city_hr hr{
+    border: 0px;
+    border-top: 1px;
+    border-top-color: #4f4f4f9e;
+    border-top-style:dashed;
+
+}
+.titles{
+    font-size: 46px;
+}
+.brands_container{
+    margin-top: 60px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.brand_container{
+    width: 11%;
+}
+.brand_container a{
+    text-decoration: none;
+    color: #757575;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+}
+.brand_logo{
+    height: 80px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+}
+.brand_logo img{
+    object-fit: contain;
+}

@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Akshar:wght@300;400&family=Montserrat&family=Roboto+Condensed&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Akshar:wght@300;400&family=Montserrat:wght@400;800&family=Roboto+Condensed&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Akshar:wght@300;400&family=Montserrat:wght@400;800&family=Poppins:wght@300&family=Roboto+Condensed&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Akshar:wght@300;400&family=Montserrat:wght@400;700;800&family=Poppins:wght@300&family=Roboto+Condensed&display=swap');
+
+body{
+    background-color: #e6e6e6;
+}
+.content{
+    display: flex;
+    justify-content: center;
+}
+.profile_main_container{
+    border-radius: 10px;
+    padding: 62px 55px 90px 55px;
+    background-color: white;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+}
+.left_container{
+    display: flex;
+    width: 40%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.right_container{
+    display: flex;
+    width: 60%;
+    flex-direction: column;
+}
+.information_container{
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Akshar', sans-serif;
+    font-family: 'Montserrat', sans-serif;
+    font-family: 'Poppins', sans-serif;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight: 400;
+    line-height: 1.5;
+    font-size: 1rem;
+    color: #212121;
+    border: 1px solid #e6e6e6;
+    margin-bottom: 20px;
+    padding: 10px 30px 9px 22px;
+    background-color: #f7f7f7;
+}
+.hint_container{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 10px;
+    color: #191919;
+    font-weight: 600;
+    line-height: 1.5;
+    text-transform: uppercase;
+}
+.information{
+    margin-right: 15px;
+    font-size: 20px;
+    font-weight: 500;
+    font-family: 'Akshar', sans-serif;
+    font-family: 'Montserrat', sans-serif;
+    font-family: 'Poppins', sans-serif;
+    font-family: 'Roboto Condensed', sans-serif;    
+    background-color: #f7f7f7;
+    border: none;
+    width: 100%;
+    color: #555;
+    line-height: 1.2;
+}
+.information:hover{
+    border: none;
+}
+.update-currency-btn{
+    transition: background-color linear .3s;
+    transition: color linear .3s;
+    width: 250px;
+    font-family: 'Akshar', sans-serif;    
+    padding: 10px 30px;
+    font-size: 20px;
+    margin-bottom: 20px;
+    background-color: black;
+    color: white;
+    border-radius: 10px;
+}
+.update-currency-btn:hover{
+    background-color: white;
+    color: black;
+}
+.my-advertisements-btn{
+    transition: background-color linear .3s;
+    transition: color linear .3s;
+    font-weight: 700;
+    border-color: #C4C4C4;
+    padding: 10px 0px;
+    border-style: solid;
+    background-color: #eeeeee;
+    margin-bottom: 10px;
+    font-family: 'Akshar', sans-serif;    
+    width: 250px;
+    font-size: 20px;
+    border-radius: 10px;
+}
+.my-advertisements-btn:hover{
+    background-color: white;
+    color: #4f4f4f9e;
+}
+.name{
+    font-size: 20px;
+    font-weight: 500;
+    font-family: 'Akshar', sans-serif;
+    font-family: 'Montserrat', sans-serif;
+    font-family: 'Poppins', sans-serif;
+    font-family: 'Roboto Condensed', sans-serif;    
+    margin-bottom: 20px;
+}
+.edit-profile-btn{
+    transition: background-color linear .3s;
+    transition: color linear .3s;
+    width: 250px;
+    font-family: 'Akshar', sans-serif;    
+    padding: 10px 30px;
+    font-size: 20px;
+    margin-bottom: 20px;
+    background-color: black;
+    color: white;
+    border-radius: 10px;
+}
+.edit-profile-btn:hover{
+    background-color: white;
+    color: black;
+}

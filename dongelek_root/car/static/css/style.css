@@ -1,0 +1,62 @@
+body{
+    margin: 0;
+    height: 100%;
+}
+.titles__profile{
+    color: white;
+}
+.subcategory_cars{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.content{
+    width: 90%;
+    margin: 30px 5%;
+}
+.in_category_car{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    height: 100%;
+    border: 1px;
+    border-color: gray;
+}
+.in_category_car_main_information{
+    height: 100%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 300px;
+}
+.in_category_car_name{
+    font-weight: 600;
+    font-size:30px;
+    display: flex;
+}
+.in_category_car_short_info{
+    display: flex;
+    font-size: 20px;
+    color: gray;
+}
+.in_category_car_date_created{
+    font-size: 20px;
+    color: gray;
+    display: flex;
+    align-items: flex-end;
+    height: 100px;
+}
+.in_category_car_price{
+    display: flex;
+    color: black;
+    font-weight: 600;
+    font-size: 30px;
+    padding-left: 20px;
+}
+.my-btn{
+    background-color: inherit !important;
+    border: 0 !important;
+}
+#photos_container{
+    display: flex;
+    flex-wrap: wrap;
+}

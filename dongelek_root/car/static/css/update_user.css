@@ -1,0 +1,178 @@
+@import url('https://fonts.googleapis.com/css2?family=Akshar:wght@300;400&family=Montserrat&family=Roboto+Condensed&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Akshar:wght@300;400&family=Montserrat:wght@400;800&family=Roboto+Condensed&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Akshar:wght@300;400&family=Montserrat:wght@400;800&family=Poppins:wght@300&family=Roboto+Condensed&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Akshar:wght@300;400&family=Montserrat:wght@400;700;800&family=Poppins:wght@300&family=Roboto+Condensed&display=swap');
+
+.form_attribute_container{
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Akshar', sans-serif;
+    font-family: 'Montserrat', sans-serif;
+    font-family: 'Poppins', sans-serif;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight: 400;
+    line-height: 1.5;
+    font-size: 1rem;
+    color: #212121;
+    border: 1px solid #e6e6e6;
+    margin-bottom: 20px;
+    padding: 10px 30px 9px 22px;
+    background-color: #f7f7f7;
+}
+.form_attribute_container input:hover{
+    border: none;
+}
+.form_attribute_container input{
+    margin-right: 15px;
+    font-size: 20px;
+    font-weight: 500;
+    font-family: 'Akshar', sans-serif;
+    font-family: 'Montserrat', sans-serif;
+    font-family: 'Poppins', sans-serif;
+    font-family: 'Roboto Condensed', sans-serif;    
+    background-color: #f7f7f7;
+    border: none;
+    width: 100%;
+    color: #555;
+    line-height: 1.2;
+}
+.form_attribute_container select{
+    margin-right: 15px;
+    font-size: 20px;
+    font-family: 'Montserrat', sans-serif;
+    background-color: #f7f7f7;
+    border: none;
+    width: 100%;
+    color: #555;
+    line-height: 1.2;
+}
+.form_attribute_container span{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 10px;
+    color: #191919;
+    font-weight: 600;
+    line-height: 1.5;
+    text-transform: uppercase;
+    
+}
+.description_container span{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 10px;
+    color: #191919;
+    font-weight: 600;
+    line-height: 1.5;
+    text-transform: uppercase;
+}
+.description_container{
+    background-color: white;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Akshar', sans-serif;
+    font-family: 'Montserrat', sans-serif;
+    font-family: 'Poppins', sans-serif;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight: 400;
+    line-height: 1.5;
+    font-size: 1rem;
+    color: #212121;
+    border: 1px solid #e6e6e6;
+    margin-bottom: 20px;
+    padding: 10px 30px 9px 22px;
+}
+#id_description{
+    padding: 9px 15px 13px 0px;
+    border: none;
+    font-size: 20px;
+    font-weight: 500;
+    font-family: 'Akshar', sans-serif;
+    font-family: 'Montserrat', sans-serif;
+    font-family: 'Poppins', sans-serif;
+    font-family: 'Roboto Condensed', sans-serif;    
+    width: 100%;
+    color: #555;
+}
+#id_main_image{
+    visibility: hidden;
+    line-height: 0;
+}
+body{
+    background-color: #e6e6e6;
+}
+.content{
+    display: flex;
+    justify-content: center;
+}
+.title{
+    font-family: 'Montserrat', sans-serif;    
+    font-size: 39px;
+    font-weight: 900;
+    text-align: center;
+    line-height: 1.2;
+    padding-bottom: 59px;
+}
+.form_container{
+    padding: 62px 55px 90px 55px;
+    background-color: white;
+    width: 500px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.full{
+    width: 100%;
+}
+.half{
+    width: 43%;
+}
+form{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+}
+.form_attribute_container label{
+    border: 1px solid #555;
+    margin-right: 15px;
+    font-size: 20px;
+    font-weight: 500;
+    font-family: 'Akshar', sans-serif;
+    font-family: 'Montserrat', sans-serif;
+    font-family: 'Poppins', sans-serif;
+    font-family: 'Roboto Condensed', sans-serif;    
+    background-color: #f7f7f7;
+    border: none;
+    width: 100%;
+    color: #555;
+    line-height: 1.2;
+}
+.form_attribute_container label:hover{
+    color: #212121;
+}
+.form_container button{
+    transition: background-color linear .3s;
+    width: 100%;
+    padding: 0px 20px;
+    align-items: center;
+    height: 55px;
+    font-size: 25px;
+    background-color: #333;
+    border-radius: 25px;
+    font-family: 'Akshar', sans-serif;
+    font-family: 'Montserrat', sans-serif;
+    font-family: 'Poppins', sans-serif;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight: 600;
+    color: #fff;
+}
+.form_container button:hover{
+    background-color: #555;
+}
+.error{
+    text-align: center;
+    font-family: 'Akshar', sans-serif;
+    font-size: 15px;
+    margin-bottom: 20px;
+    color: #c70000b0;
+}

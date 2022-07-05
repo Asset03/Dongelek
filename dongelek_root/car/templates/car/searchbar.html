@@ -1,0 +1,91 @@
+{% extends 'car/base.html' %}
+{% load static %}
+{% block scripts %}
+    <link type="text/css" defer rel="stylesheet" href="{% static 'css/searchbar.css' %}">
+    <style>
+        .search_container_x input{
+            background-image: url("{% static 'images/search_icon.png' %}");
+        }
+    </style>
+{% endblock %}
+{% block content %}
+    <form action="{% url 'searchbar' %}" method="get">
+        <div class="search_container_x">
+            <input type="text" id="search" name="search" placeholder="Search..." value="{{search}}"/>
+        </div>
+        <div class="main_container">
+            <div class="left_container">
+                <div class="filter_container">
+                    <div class="filter_titles">Brands</div>
+                    {% for brand in brands %}
+                        <div class="checkbox_container">
+                            <input type="checkbox" checked name="brand" value="{{ brand.name }}" id="{{brand.name}}"></input>
+                            <label for="{{brand.name}}">{{brand.name}}</label>
+                        </div>
+                    {% endfor %}
+                    <div class="filter_titles">Cities</div>
+                    {% for city in cities %}
+                        <div class="checkbox_container">
+                            <input type="checkbox" checked name="city" value="{{ city.name }}" id="{{city.name}}"></input>
+                            <label for="{{city.name}}">{{city.name}}</label>
+                        </div>
+                    {% endfor %}
+                    <button type="submit">Results</button>
+                </div>
+            </div>
+            <div class="right_container">
+                {% if post %}
+                    <div class="hint">You have found <b>{{post.count}}</b> <i>filtering vehicles</i></div>
+                    <br>
+                        {% for i in post %}
+                            <div class="vehicle">
+                                <a href="{{i.get_absolute_url}}">
+                                    <div class="vehicle_image_container">
+                                        <img src="{{i.main_image.url}}" alt="{{i.name}}" width="100%">
+                                    </div>
+                                    <div class="vehicle_information_container">
+                                        <div class="name_container">
+                                            {{i.name}}
+                                        </div>
+                                        <div class="date_container">{{i.time_created}}</div>
+                                        <div class="information_container_">
+                                            <div class="tag_container">Year:&nbsp;</div>
+                                            <div class="information_container">{{i.year}}</div>
+                                        </div>
+                                        <div class="information_container_">
+                                            <div class="tag_container">Run:&nbsp;</div>
+                                            <div class="information_container">{{i.run}}</div>
+                                        </div>
+                                        <div class="information_container_">
+                                            <div class="tag_container">Enginer capacity:&nbsp;</div>
+                                            <div class="information_container">{{i.engine_capacity}}</div>
+                                        </div>
+                                        <div class="information_container_">
+                                            <div class="tag_container">Color:&nbsp;</div>
+                                            <div class="information_container">{{i.color}}</div>
+                                        </div>
+                                        <div class="information_container_">
+                                            <div class="tag_container">Description:&nbsp;</div>
+                                            <div class="information_container">{{i.description|truncatewords:10}}</div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        {% endfor %}
+                {% else %}
+                    <div class="not-found-container ">
+                        <div class="not-found-main-message-container">
+                            Didn't find anything for "{{search}}"
+                        </div>
+                        <div class="not-found-additional-message-container">
+                            Try searching another vehicle
+                        </div>
+                        <div class="not-found-image-container">
+                            <img src="{% static 'images/searching.png' %}" alt="" width="100%">
+                        </div>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    </form>
+{% endblock %}

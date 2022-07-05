@@ -1,0 +1,39 @@
+{% extends 'car/base.html' %}
+{% load static %}
+{% block scripts %}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="{% static 'js\deleteCar.js' %}" defer></script>
+    <link type="text/css" rel="stylesheet" href="{% static 'css/update_user.css' %}">
+{% endblock %}
+{% block content %}
+<div class="form_container">
+    <div class="title">
+        Update Your Profile
+    </div>
+    {% if error %}
+        <div class="error">
+            {{error}}
+        </div>
+    {% endif %}
+    <form method="POST" action="" enctype="multipart/form-data">
+        {% csrf_token %}
+            <div class="form_attribute_container full">
+                <span>Username*</span>
+                <input type="text" name="username" maxlength="255" required id="id_username" value="{{user.username}}">
+            </div>
+            <div class="form_attribute_container full">
+                <span>First Name*</span>
+                <input type="text" name="first_name" maxlength="255" required id="id_first_name" value="{{user.first_name}}">
+            </div>
+            <div class="form_attribute_container full">
+                <span>Last Name*</span>
+                <input type="text" name="last_name" maxlength="255" required id="id_last_name" value="{{user.last_name}}">
+            </div>
+            <div class="form_attribute_container full">
+                <span>Email*</span>
+                <input type="email" name="email" maxlength="255" required id="id_email" value="{{user.email}}">
+            </div>
+        <button type="submit">Update</button>
+    </form>
+</div>
+{% endblock %}

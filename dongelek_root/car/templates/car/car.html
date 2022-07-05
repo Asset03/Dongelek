@@ -1,0 +1,174 @@
+{% extends 'car/base.html' %}
+{% load static %}
+{% block scripts %}
+    <script src="{% static 'js\rating.js' %}" defer></script>
+    <script src="{% static 'js\addBasket.js' %}" defer></script>
+    <script src="{% static 'js\deleteBasket.js' %}" defer></script>
+    <script src="{% static 'js\email.js' %}" defer></script>
+    <script src="{% static 'js\photos.js' %}" defer></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link type="text/css" rel="stylesheet" href="{% static 'css/car.css' %}">
+{% endblock %}
+{% block content %}
+    <div id="car_id" car="{{ car.pk }}"></div>
+    <div class="main_info_container">Vehicle</div>
+    <div class="car_container">
+        <div class="images_container">
+            <div class="main_image_container">
+                <img src="{{car.main_image.url}}" alt="{{car.name}}" id="main_image" width="100%" >
+            </div>
+            <div class="additional_images_container">
+                <img class="photos" src="{{car.main_image.url}}" alt="{{car.name}}" width="64px">
+                    {% for photo in photos %}
+                        <img class="photos" src="{{ photo.image.url }}" alt="{{car.name}}" width="64px">
+                    {% endfor %}
+            </div>
+            {% if request.user.is_authenticated %}
+                <form action="{{ car.get_absolute_url }}" method="post" enctype="multipart/form-data">
+                    <div class="new_comment_container">
+                        <img src="{% static 'images\ava.png' %}" alt="" height="40px">
+                        <textarea name="comment" cols="120" rows="3" required="" id="id_comment"></textarea>
+                        {% csrf_token %}
+                        <button type="submit">Comment</button>
+                    </div>
+                </form>
+            {% else %}
+                <form action="{% url 'login' %}" method="post" enctype="multipart/form-data">
+                    <div class="new_comment_container">
+                        <img src="{% static 'images\ava.png' %}" alt="" height="40px">
+                        <textarea name="comment" cols="200" rows="3" required="" id="id_comment"></textarea>
+                        {% csrf_token %}
+                        <button type="submit">Comment</button>
+                    </div>
+                </form>
+            {% endif %}
+            <div class="comments_container">
+                {% for comment in comments %}
+                    <div class="comment_container">
+                        <img src="{% static 'images\ava.png' %}" alt="" height="40px">
+                        <div class="comment_info_container">
+                            <div class="comment_author">
+                                {{comment.author}}
+                            </div>
+                            <div class="comment_date">
+                                {{comment.date}}
+                            </div>
+                            <div class="comment">
+                                {{comment.comment}}
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="information_container">
+            <div class="name_container">
+                {{car.name}}
+            </div>
+            <div class="price_container">
+                <div class="price">
+                    {{ car.price }}
+                </div>
+                <div class="currency">KZT</div>
+            </div>
+            {% if request.user.is_authenticated %}
+            {% if cart %}
+                <form action="" method="post" class="cart-form-delete">
+                    {% csrf_token %}
+                    <button type="submit" class="my-btn-cart-delete cart-btn" >
+                        Delete from your cart
+                    </button>
+                </form>
+            {% else %}
+                <form action="" method="post" class="cart-form">
+                    {% csrf_token %}
+                    <button type="submit" class="my-btn-cart cart-btn" >
+                        Add to your shopping cart
+                    </button>
+                </form>
+            {% endif %}
+                <form action="" method="post" class="email-form">
+                    {% csrf_token %}
+                    <button type="submit" class="my-btn-email" >
+                        Send email
+                    </button>
+                </form>
+            {% endif %}
+            <div class="info">
+                <div class=""><b>Name:&nbsp</b></div>
+                <div class="">{{car.name}}</div>
+            </div>
+            <div class="info">
+                <div class=""><b>Year:&nbsp</b></div>
+                <div class="">{{car.year}} </div>
+            </div>
+            <div class="info">
+                <div class=""><b>Engine capacity:&nbsp</b></div>
+                <div class=""> {{car.engine_capacity}} </div>
+            </div>
+            <div class="info">
+                <div class=""><b>Run:&nbsp</b></div>
+                <div class=""> {{car.run}} km</div>
+            </div>
+            <div class="info">
+                <div class=""><b>Color:&nbsp</b></div>
+                <div class=""> {{car.color}} </div>
+            </div>
+            <div class="info">
+                <div class=""><b>Description:&nbsp</b></div>
+                <div class=""> {{car.description}} </div>
+            </div>
+            <div class="info seller_info" seller-username="{{seller.username}}" seller-email="{{seller.email}}">
+                <div class=""><b>Seller:&nbsp</b></div>
+                <div class=""> {{seller.username}} </div>
+            </div>
+            {% if rating %}
+                <div class="average_rating_container">
+                    <div class="average_rating_img_container">
+                        <img src="{% static 'images\rating\like.png' %}" height="50px" alt="">
+                    </div>
+                    <div class="average_rating_value_container">
+                        <div>
+                            {{car.get_average_rating}} 
+                        </div>
+                        <div>
+                            {{car.get_amount_ratings}} Rating
+                        </div>
+                    </div>
+                </div>  
+            {% else %}
+                <div class="average_rating_value_container">
+                    No rating
+                </div>
+            {% endif %}
+            {% if request.user.is_authenticated %}
+            <div class="rating_container">
+                <form action="" method="post" class="rate-form">
+                    {% csrf_token %}
+                    <button type="submit" class="my-btn">
+                        <img height="45px" id="one" src="{% static 'images\rating\star_stroke.png' %}" alt="" data-original="{% static 'images\rating\star_filled.png' %}">
+                    </button>
+                    <button type="submit" class="my-btn">
+                        <img height="45px" id="two" src="{% static 'images\rating\star_stroke.png' %}" alt="" data-original="{% static 'images\rating\star_filled.png' %}">
+                    </button>
+                    <button type="submit" class="my-btn">
+                        <img height="45px" id="three" src="{% static 'images\rating\star_stroke.png' %}" alt="" data-original="{% static 'images\rating\star_filled.png' %}">
+                    </button>
+                    <button type="submit" class="my-btn">
+                        <img height="45px" id="four" src="{% static 'images\rating\star_stroke.png' %}" alt="" data-original="{% static 'images\rating\star_filled.png' %}">
+                    </button>
+                    <button type="submit" class="my-btn">
+                        <img height="45px" id="five" src="{% static 'images\rating\star_stroke.png' %}" alt="" data-original="{% static 'images\rating\star_filled.png' %}">
+                    </button>
+                </form>
+                <br>
+                <div id="confirm-box"></div>
+            </div>
+        {% endif %}
+        </div>
+    </div>
+    <div class="subcategory_cars">
+    </div>          
+        <br>
+{% endblock %}
